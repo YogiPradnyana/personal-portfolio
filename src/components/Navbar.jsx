@@ -13,11 +13,25 @@ const navLinks = [
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [hasScrolled, setHasScrolled] = useState(false);
 
+  // MENGGABUNGKAN SEMUA LOGIKA KE DALAM SATU useEffect
   useEffect(() => {
+    // 1. Logika untuk menentukan apakah shadow harus ditampilkan
+    // Shadow muncul jika section aktif BUKAN lagi 'home'
+    setHasScrolled(activeSection !== "home");
+
+    // 2. Logika untuk mengunci scroll saat menu mobile terbuka
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    // 3. Logika Intersection Observer untuk mendeteksi section aktif
     const observerOptions = {
       root: null,
-      rootMargin: "-30% 0px -70% 0px",
+      rootMargin: "-10% 0px -90% 0px", // Disesuaikan agar lebih akurat di tengah
       threshold: 0,
     };
 
@@ -39,29 +53,22 @@ const Navbar = () => {
       if (sec) observer.observe(sec);
     });
 
+    // Fungsi cleanup
     return () => {
+      document.body.style.overflow = "unset"; // Pastikan scroll kembali normal
       sections.forEach((sec) => {
         if (sec) observer.unobserve(sec);
       });
     };
-  }, []);
-
-  // Efek untuk mengunci scroll di body tetap berguna
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    // Cleanup function untuk memastikan overflow kembali normal saat komponen di-unmount
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, activeSection]);
   return (
     <nav className="fixed top-5 left-0 right-0 z-50">
       <div className="mx-5 lg:mx-24 xl:mx-28 ">
-        <div className="flex items-center justify-between rounded-2xl bg-white px-5 lg:px-8 py-4">
+        <div
+          className={`flex items-center justify-between rounded-2xl transition-shadow duration-300 bg-white px-5 lg:px-8 py-4 ${
+            hasScrolled ? "shadow-navbar-shadow" : "bg-transparent"
+          }`}
+        >
           {/* Bagian Kiri: Logo / Nama */}
           <div className="flex-shrink-0">
             <a href="#home" className="text-lg font-semibold transition-colors">

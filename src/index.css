@@ -6,4 +6,9 @@
   --color-se: #408e91;
   --color-neu: #212529;
   --font-pr: "Poppins", sans-serif;
+  --shadow-navbar-shadow: 0 4px 24px -1px rgb(0 0 0 / 0.07);
+}
+
+html {
+  scroll-behavior: smooth;
 }

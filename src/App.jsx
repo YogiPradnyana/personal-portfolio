@@ -3,7 +3,7 @@ import React from "react";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 // import Projects from "./components/Projects";
-// import Skills from "./components/Skills";
+import Skills from "./components/Skills";
 // import Contact from "./components/Contact";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <main className="relative min-h-screen overflow-x-hidden">
         <Hero />
         {/* <Projects /> */}
-        {/* <Skills /> */}
+        <Skills />
         {/* <Contact /> */}
       </main>
     </div>
