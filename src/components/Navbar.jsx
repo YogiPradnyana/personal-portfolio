@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { IoMdClose } from "react-icons/io";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 // Data untuk link navigasi agar mudah diubah
 const navLinks = [
@@ -58,7 +60,7 @@ const Navbar = () => {
   }, [isMenuOpen]);
   return (
     <nav className="fixed top-5 left-0 right-0 z-50">
-      <div className="mx-5 lg:mx-24 xl:mx-28 font-se">
+      <div className="mx-5 lg:mx-24 xl:mx-28 ">
         <div className="flex items-center justify-between rounded-2xl bg-white px-5 lg:px-8 py-4">
           {/* Bagian Kiri: Logo / Nama */}
           <div className="flex-shrink-0">
@@ -101,26 +103,13 @@ const Navbar = () => {
               className="inline-flex items-center justify-center rounded-md p-2"
             >
               <span className="sr-only">Open main menu</span>
-              <svg
-                className="block h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+              <RxHamburgerMenu size={24} className="hover:text-pr" />
             </button>
           </div>
         </div>
       </div>
       <div
-        className={`absolute -top-5 w-full font-se origin-top transform bg-white transition-transform duration-300 ease-in-out lg:hidden 
+        className={`absolute -top-5 w-full origin-top transform bg-white transition-transform duration-300 ease-in-out lg:hidden 
                    ${isMenuOpen ? "scale-y-100" : "scale-y-0"}`}
       >
         <button
@@ -128,26 +117,7 @@ const Navbar = () => {
           type="button"
           onClick={() => setIsMenuOpen(false)}
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5 15L15 5"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-            <path
-              d="M5 5L15 15"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>
+          <IoMdClose size={24} className="hover:text-pr" />
         </button>
         <div className="flex items-center justify-center min-h-screen">
           <div className="space-y-2 px-4 pt-2 pb-4">
