@@ -10,42 +10,38 @@ const projects = [
     image: "/assets/images/project-6.webp",
     github: "https://github.com/YogiPradnyana/balinara",
     live: "#",
+    category: "Website",
   },
   {
     title: "Calculator App",
     image: "/assets/images/project-5.webp",
     github: "https://github.com/YogiPradnyana/calculator-v2",
-    live: "https://calculator-v2-navy.vercel.app/", // Beri '#' jika tidak ada live demo
+    live: "https://calculator-v2-navy.vercel.app/",
+    category: "Website",
   },
   {
     title: "Eventia PNB",
     image: "/assets/images/project-3.webp",
     github: "https://github.com/YogiPradnyana/eventia-pnb",
-    live: "#", // Beri '#' jika tidak ada live demo
+    live: "#",
+    category: "Website",
   },
   {
     title: "KHASS E-Ticketing",
-    description:
-      "KHASS is an e-ticketing website for selling theater tickets and promoting...",
-    tech: ["Next JS", "Tailwind", "Express JS"],
     image: "/images/project-2.webp",
     github: "#",
     live: "#",
+    category: "Website",
   },
   {
     title: "KNA Landing Page",
-    description:
-      "KNA (Keanu Abimanyu Construction) Landing Page is a website that I created...",
-    tech: ["HTML", "CSS", "Tailwind"],
     image: "/images/project-1.webp",
     github: "#",
     live: "#",
+    category: "Website",
   },
   {
     title: "Another Cool Project",
-    description:
-      "This is another cool project showcasing my skills in modern web development.",
-    tech: ["React", "Vite", "Firebase"],
     image: "/images/project-4.webp",
     github: "#",
     live: "#",
@@ -62,7 +58,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-24 px-8 sm:px-10 lg:px-32 xl:px-40 bg-white"
+      className="py-24 px-8 sm:px-10 lg:px-32 xl:px-40 scroll-mt-12 bg-white"
     >
       <div className="container mx-auto px-4">
         {/* Judul Section */}
@@ -82,7 +78,7 @@ const Projects = () => {
               <div className="group relative h-56 w-full border-2 border-neu/10 overflow-hidden rounded-3xl">
                 {/* Badge "Website" kita naikkan layernya agar tetap di atas overlay */}
                 <div className="absolute top-3 right-3 flex h-fit w-fit items-center gap-2 rounded-full bg-neu px-2.5 py-1 text-xs font-medium text-white md:text-sm">
-                  Website
+                  {project.category || "Website"}
                 </div>
 
                 <img

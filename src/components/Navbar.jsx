@@ -5,9 +5,10 @@ import { RxHamburgerMenu } from "react-icons/rx";
 // Data untuk link navigasi agar mudah diubah
 const navLinks = [
   { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
+  // { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact", isButton: true },
 ];
 
 const Navbar = () => {
@@ -78,20 +79,22 @@ const Navbar = () => {
 
           <div className="hidden lg:block">
             <ul className="flex items-center space-x-10 xl:space-x-15">
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className={`transition-colors font-medium hover:text-pr ${
-                      activeSection === link.href.substring(1)
-                        ? "text-pr"
-                        : "text-neu"
-                    }`}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
+              {navLinks
+                .filter((link) => !link.isButton)
+                .map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className={`transition-colors font-medium hover:text-pr ${
+                        activeSection === link.href.substring(1)
+                          ? "text-pr"
+                          : "text-neu"
+                      }`}
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
             </ul>
           </div>
 
@@ -128,22 +131,25 @@ const Navbar = () => {
         </button>
         <div className="flex items-center justify-center min-h-screen">
           <div className="space-y-2 px-4 pt-2 pb-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                className={`block text-center font-medium hover:font-pr px-3 py-3 ${
-                  activeSection === link.href.substring(1)
-                    ? "text-pr"
-                    : "text-neu"
-                }`}
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks
+              .filter((link) => !link.isButton)
+              .map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block text-center font-medium hover:font-pr px-3 py-3 ${
+                    activeSection === link.href.substring(1)
+                      ? "text-pr"
+                      : "text-neu"
+                  }`}
+                >
+                  {link.name}
+                </a>
+              ))}
             <a
               href="#contact"
+              onClick={() => setIsMenuOpen(false)}
               className="cursor-pointer flex px-4.5 py-2.5 gap-2 items-center justify-center font-medium bg-pr rounded-full text-white whitespace-nowrap"
             >
               Get in Touch
