@@ -4,7 +4,7 @@ A clean, responsive, and interactive portfolio website built from scratch with R
 
 **Live Demo:** [**https://yogipradnyana-portfolio.vercel.app/**](https://yogipradnyana-portfolio.vercel.app/)
 
-![Portfolio Screenshot](./public/images/screenshot.png) 
+![Portfolio Screenshot](./public/assets/images/screenshot.png)
 
 ---
 
