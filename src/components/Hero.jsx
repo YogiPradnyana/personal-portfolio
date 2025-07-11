@@ -75,9 +75,9 @@ function Hero() {
           {/* Tombol CTA */}
           <div className="mt-6 flex flex-wrap justify-center gap-4 lg:justify-start">
             <a
-              href="#contact"
-              download
-              className="cursor-pointer shadow-md flex px-6 py-3 gap-2 items-center justify-center font-medium bg-pr rounded-full text-white whitespace-nowrap hover:scale-103 transition-transform"
+              href="/assets/files/CV_I Putu Yogi Pradnyana.pdf"
+              download="CV_I Putu Yogi Pradnyana.pdf"
+              className="cursor-pointer shadow-lg flex px-6 py-3 gap-2 items-center justify-center font-medium bg-pr rounded-full text-white whitespace-nowrap hover:scale-101 transition-all duration-300 ease-in-out"
             >
               <FiDownload size={24} />
               Download CV

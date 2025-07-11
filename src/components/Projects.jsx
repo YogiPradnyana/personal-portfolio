@@ -106,7 +106,7 @@ const Projects = () => {
           <div className="mt-10 text-center">
             <button
               onClick={handleSeeMore}
-              className="rounded-full cursor-pointer bg-pr px-8 py-3 text-base font-semibold text-white shadow-lg transition-transform hover:scale-103"
+              className="rounded-full cursor-pointer bg-pr px-8 py-3 text-base font-medium text-white shadow-lg transition-all duration-300 ease-in-out hover:scale-101"
             >
               See More
             </button>

@@ -128,7 +128,7 @@ const Contact = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-pr text-white flex items-center justify-center px-6 py-3 font-medium cursor-pointer rounded-full transition-all disabled:cursor-not-allowed disabled:bg-pr/70"
+              className="bg-pr text-white flex items-center shadow-lg hover:scale-101 duration-300 ease-in-out justify-center px-6 py-3 font-medium cursor-pointer rounded-full transition-all disabled:cursor-not-allowed disabled:bg-pr/70"
             >
               {isSubmitting ? (
                 // Jika sedang submitting, tampilkan ikon spinner yang berputar
