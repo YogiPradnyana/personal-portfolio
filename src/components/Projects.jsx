@@ -64,7 +64,8 @@ const Projects = () => {
         {/* Judul Section */}
         <h2 className="text-4xl font-bold text-center mb-4">My Projects</h2>
         <p className="mt-3 sm:mt-5 text-center text-sm mx-auto mb-12 sm:text-base text-neu/60 max-w-md lg:max-w-lg">
-          There are some tech stack and tools that i've learned and experienced
+          Each project below marks a key step in my journey of mastering
+          frontend development and transforming ideas into code.
         </p>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
