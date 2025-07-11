@@ -2,8 +2,8 @@
 import React from "react";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-// import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 // import Contact from "./components/Contact";
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
       <Navbar />
       <main className="relative min-h-screen overflow-x-hidden">
         <Hero />
-        {/* <Projects /> */}
         <Skills />
+        <Projects />
         {/* <Contact /> */}
       </main>
     </div>

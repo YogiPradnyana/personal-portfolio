@@ -1,7 +1,7 @@
 // src/components/Hero.jsx
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import profilePhoto from "../assets/images/Yogi.jpg";
+import profilePhoto from "/assets/images/Yogi.jpg";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 
@@ -33,7 +33,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="flex items-center pt-24 px-5 lg:px-32 xl:px-40 min-h-screen bg-linear-to-l from-[#C7EFDD] to-[#F7FDFA]"
+      className="flex items-center pt-24 px-8 sm:px-10 lg:px-32 xl:px-40 min-h-screen bg-linear-to-l from-[#C7EFDD] to-[#F7FDFA]"
     >
       <div className="flex flex-col-reverse pb-16 lg:pb-0 items-center flex-1 justify-between gap-12 lg:flex-row">
         {/* ===== Kolom Kiri: Teks & CTA ===== */}

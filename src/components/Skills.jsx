@@ -126,9 +126,12 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-24 scroll-mt-12">
-      <div className="container mx-auto px-4">
+      <div className="px-8 sm:px-10 lg:px-32 xl:px-40">
         {/* Judul Section */}
-        <h2 className="text-4xl font-bold text-center mb-12">My Skills</h2>
+        <h2 className="text-4xl font-bold text-center mb-4">My Skills</h2>
+        <p className="mt-3 sm:mt-5 text-center text-sm mx-auto mb-12 sm:text-base text-neu/60 max-w-md lg:max-w-lg">
+          There are some tech stack and tools that i've learned and experienced
+        </p>
 
         {/* Tombol Tab Navigasi */}
         <div className="flex justify-center gap-4 mb-12">
@@ -151,7 +154,7 @@ const Skills = () => {
         </div>
 
         {/* Grid untuk menampilkan skill */}
-        <div className="rounded-4xl bg-white p-6 shadow-lg sm:p-8 max-w-4xl mx-auto">
+        <div className="rounded-4xl bg-white p-6 shadow-lg sm:p-8">
           {/* Grid untuk menampilkan skill */}
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {skillsToDisplay.map((skill) => (
