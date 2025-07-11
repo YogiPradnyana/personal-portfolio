@@ -1,8 +1,9 @@
 // src/components/Portfolio.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaEye, FaGithub, FaLocationArrow, FaRegEye } from "react-icons/fa";
 import { FiExternalLink, FiInfo } from "react-icons/fi";
 import { GoArrowUpRight } from "react-icons/go";
+import ProjectCard from "./ProjectCard";
 // 1. Definisikan data proyek di sini agar mudah dikelola
 const projects = [
   {
@@ -51,10 +52,27 @@ const projects = [
 
 const Projects = () => {
   const [visibleCount, setVisibleCount] = useState(3);
+  const [activeCard, setActiveCard] = useState(null);
 
   const handleSeeMore = () => {
     setVisibleCount((prevCount) => prevCount + 3);
   };
+
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setActiveCard(null); // Reset kartu aktif menjadi tidak ada
+    };
+
+    // Tambahkan event listener saat ada kartu yang aktif
+    if (activeCard) {
+      window.addEventListener("mousedown", handleClickOutside);
+    }
+
+    // Cleanup: Hapus event listener
+    return () => {
+      window.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [activeCard]);
 
   return (
     <section
@@ -71,58 +89,17 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.slice(0, visibleCount).map((project) => (
-            <div
+            <ProjectCard
               key={project.title}
-              className="flex flex-col overflow-hidden transition-all duration-300"
-            >
-              {/* Gambar Proyek */}
-              {/* 1. Tambahkan kelas 'group' di sini untuk memulai efek hover */}
-              <div className="group relative h-56 sm:h-60 w-full border-2 border-neu/10 overflow-hidden rounded-3xl">
-                {/* Badge "Website" kita naikkan layernya agar tetap di atas overlay */}
-                <div className="absolute top-3 right-3 flex h-fit w-fit items-center gap-2 rounded-full bg-neu px-2.5 py-1 text-xs font-medium text-white md:text-sm">
-                  {project.category || "Website"}
-                </div>
-
-                <img
-                  src={project.image} // Ganti dengan project.image jika sudah ada
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
-
-                {/* 2. Tambahkan div untuk Overlay & Tombol Ikon */}
-                <div className="absolute inset-0 flex items-center gap-3 z-20 justify-center bg-neu/50 transition-all duration-500 ease-in-out transform -translate-y-60 group-hover:translate-y-0">
-                  {project.live && project.live !== "#" && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-black
-                 shadow-lg transition-all duration-300 delay-100 transform scale-75 opacity-0
-                 group-hover:scale-100 group-hover:opacity-100"
-                      aria-label="Live Preview"
-                    >
-                      <FaEye size={22} />
-                    </a>
-                  )}
-                  <a
-                    href={project.github} // Pastikan ada link github di data proyekmu
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-black
-                            transition-all duration-300 transform scale-75 opacity-0
-                             group-hover:scale-100 group-hover:opacity-100"
-                    aria-label="GitHub Repository"
-                  >
-                    <FaGithub size={24} />
-                  </a>
-                </div>
-              </div>
-
-              {/* Konten Kartu */}
-              <div className="flex flex-1 px-3 py-2">
-                <h3 className="font-semibold">{project.title}</h3>
-              </div>
-            </div>
+              project={project}
+              isActive={activeCard === project.title}
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveCard(
+                  activeCard === project.title ? null : project.title
+                );
+              }}
+            />
           ))}
         </div>
         {visibleCount < projects.length && (
