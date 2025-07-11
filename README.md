@@ -2,7 +2,7 @@
 
 A clean, responsive, and interactive portfolio website built from scratch with React and Tailwind CSS. This project showcases my skills, my work, and my passion for creating user-friendly digital experiences.
 
-**Live Demo:** [**https://yogipradnyana-portfolio.vercel.app/**](https://yogipradnyana-portfolio.vercel.app/)
+**Live Demo:** [**https://personal-portfolio-yogi-pradnyanas-projects.vercel.app/**](https://personal-portfolio-yogi-pradnyanas-projects.vercel.app/)
 
 ![Portfolio Screenshot](./public/assets/images/Screenshot.png)
 
