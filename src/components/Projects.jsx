@@ -77,7 +77,7 @@ const Projects = () => {
             >
               {/* Gambar Proyek */}
               {/* 1. Tambahkan kelas 'group' di sini untuk memulai efek hover */}
-              <div className="group relative h-60 w-full border-2 border-neu/10 overflow-hidden rounded-3xl">
+              <div className="group relative h-56 sm:h-60 w-full border-2 border-neu/10 overflow-hidden rounded-3xl">
                 {/* Badge "Website" kita naikkan layernya agar tetap di atas overlay */}
                 <div className="absolute top-3 right-3 flex h-fit w-fit items-center gap-2 rounded-full bg-neu px-2.5 py-1 text-xs font-medium text-white md:text-sm">
                   {project.category || "Website"}
