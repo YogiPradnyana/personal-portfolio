@@ -83,15 +83,15 @@ const Contact = () => {
           <p className="text-neu/60 text-sm sm:text-base mb-4 md:mb-6">
             Feel free to contact me at your convenience.
           </p>
-          <form ref={form} onSubmit={sendEmail} class="flex flex-col gap-4">
-            <div class="flex gap-4">
+          <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
+            <div className="flex gap-4">
               <input
                 type="text"
                 name="firstname"
                 id="user_firstname"
                 required
                 placeholder="Firstname"
-                class="px-3 w-1/2 py-3 text-sm border placeholder:text-neu/60 border-neu/20 rounded-full"
+                className="px-3 w-1/2 py-3 text-sm border placeholder:text-neu/60 border-neu/20 rounded-full"
               />
               <input
                 type="text"
@@ -99,7 +99,7 @@ const Contact = () => {
                 required
                 id="user_lastname"
                 placeholder="Lastname"
-                class="px-3 w-1/2 py-3 text-sm border placeholder:text-neu/60 border-neu/20 rounded-full"
+                className="px-3 w-1/2 py-3 text-sm border placeholder:text-neu/60 border-neu/20 rounded-full"
               />
             </div>
             <input
@@ -108,14 +108,14 @@ const Contact = () => {
               id="user_email"
               required
               placeholder="Email"
-              class="px-3 py-3 text-sm border placeholder:text-neu/60 border-neu/20 rounded-full"
+              className="px-3 py-3 text-sm border placeholder:text-neu/60 border-neu/20 rounded-full"
             />
             <input
               type="text"
               name="phone"
               id="user_phone"
               placeholder="Phone"
-              class="px-3 py-3 text-sm border placeholder:text-neu/60 border-neu/20 rounded-full"
+              className="px-3 py-3 text-sm border placeholder:text-neu/60 border-neu/20 rounded-full"
             />
             <textarea
               rows="7"
@@ -123,12 +123,12 @@ const Contact = () => {
               name="message"
               id="user_message"
               required
-              class="px-3 py-3 text-sm placeholder:text-neu/60 border border-neu/20 rounded-3xl"
+              className="px-3 py-3 text-sm placeholder:text-neu/60 border border-neu/20 rounded-3xl"
             ></textarea>
             <button
               type="submit"
               disabled={isSubmitting}
-              class="bg-pr text-white flex items-center justify-center px-6 py-3 font-medium cursor-pointer rounded-full transition-all disabled:cursor-not-allowed disabled:bg-pr/70"
+              className="bg-pr text-white flex items-center justify-center px-6 py-3 font-medium cursor-pointer rounded-full transition-all disabled:cursor-not-allowed disabled:bg-pr/70"
             >
               {isSubmitting ? (
                 // Jika sedang submitting, tampilkan ikon spinner yang berputar
