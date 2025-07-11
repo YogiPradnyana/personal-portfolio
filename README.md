@@ -35,7 +35,7 @@ A clean, responsive, and interactive portfolio website built from scratch with R
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/YogiPradnyana/personal-portfolio.git](https://github.com/YogiPradnyana/personal-portfolio.git)
+   git clone https://github.com/YogiPradnyana/personal-portfolio.git
    ```
 2. Navigate to the project directory:
    ```bash
