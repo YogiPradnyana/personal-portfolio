@@ -20,6 +20,13 @@ const projects = [
     category: "Website",
   },
   {
+    title: "Bakeru - Bread Factory",
+    image: "/assets/images/project-4.webp",
+    github: "https://github.com/danielnalle/pbl-2024",
+    live: "#",
+    category: "Website",
+  },
+  {
     title: "Eventia PNB",
     image: "/assets/images/project-3.webp",
     github: "https://github.com/YogiPradnyana/eventia-pnb",
@@ -27,24 +34,18 @@ const projects = [
     category: "Website",
   },
   {
-    title: "KHASS E-Ticketing",
-    image: "/images/project-2.webp",
-    github: "#",
-    live: "#",
+    title: "CRUD Javascript",
+    image: "/assets/images/project-2.webp",
+    github: "#https://github.com/YogiPradnyana/CRUD-Javascript",
+    live: "https://crud-javascript-hazel.vercel.app/",
     category: "Website",
   },
   {
-    title: "KNA Landing Page",
-    image: "/images/project-1.webp",
-    github: "#",
-    live: "#",
+    title: "Todo List",
+    image: "/assets/images/project-1.webp",
+    github: "https://github.com/YogiPradnyana/TODO-LIST",
+    live: "https://todo-list-plum-ten-54.vercel.app/",
     category: "Website",
-  },
-  {
-    title: "Another Cool Project",
-    image: "/images/project-4.webp",
-    github: "#",
-    live: "#",
   },
 ];
 
@@ -76,7 +77,7 @@ const Projects = () => {
             >
               {/* Gambar Proyek */}
               {/* 1. Tambahkan kelas 'group' di sini untuk memulai efek hover */}
-              <div className="group relative h-56 w-full border-2 border-neu/10 overflow-hidden rounded-3xl">
+              <div className="group relative h-60 w-full border-2 border-neu/10 overflow-hidden rounded-3xl">
                 {/* Badge "Website" kita naikkan layernya agar tetap di atas overlay */}
                 <div className="absolute top-3 right-3 flex h-fit w-fit items-center gap-2 rounded-full bg-neu px-2.5 py-1 text-xs font-medium text-white md:text-sm">
                   {project.category || "Website"}
@@ -85,7 +86,7 @@ const Projects = () => {
                 <img
                   src={project.image} // Ganti dengan project.image jika sudah ada
                   alt={project.title}
-                  className="h-full w-full object-cover object-center"
+                  className="w-full h-full object-cover"
                 />
 
                 {/* 2. Tambahkan div untuk Overlay & Tombol Ikon */}
