@@ -125,7 +125,7 @@ const Skills = () => {
   const skillsToDisplay = activeTab === "tech" ? techSkills : toolSkills;
 
   return (
-    <section id="skills" className="py-24 scroll-mt-12">
+    <section id="skills" className="pt-24 md:pt-36 pb-12 scroll-mt-12">
       <div className="px-8 sm:px-10 lg:px-32 xl:px-40">
         {/* Judul Section */}
         <h2 className="text-4xl font-bold text-center mb-4">My Skills</h2>

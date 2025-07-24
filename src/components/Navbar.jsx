@@ -72,8 +72,11 @@ const Navbar = () => {
         >
           {/* Bagian Kiri: Logo / Nama */}
           <div className="flex-shrink-0">
-            <a href="#home" className="text-lg font-semibold transition-colors">
-              <span className="text-pr">Yogi</span>pradnyana
+            <a
+              href="#home"
+              className="text-2xl sm:text-3xl font-semibold transition-colors"
+            >
+              <span className="text-pr">Y</span>P
             </a>
           </div>
 

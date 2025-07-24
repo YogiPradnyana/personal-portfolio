@@ -49,7 +49,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-24 px-8 sm:px-10 lg:px-32 xl:px-40 bg-white scroll-mt-12"
+      className="pt-12 md:pt-24 pb-12 px-8 sm:px-10 lg:px-32 xl:px-40 bg-white scroll-mt-12"
     >
       <div className="flex flex-col md:flex-row gap-10 md:gap-8">
         <div className="flex flex-col">

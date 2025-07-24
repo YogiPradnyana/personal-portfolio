@@ -77,7 +77,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-24 px-8 sm:px-10 lg:px-32 xl:px-40 scroll-mt-12 bg-white"
+      className="pt-12 md:pt-24 pb-12 px-8 sm:px-10 lg:px-32 xl:px-40 scroll-mt-12 bg-white"
     >
       <div className="container mx-auto px-4">
         {/* Judul Section */}
